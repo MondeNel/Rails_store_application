@@ -1,14 +1,16 @@
-<%= form_with model: product do |form| %>
+<%= form_with model: product, class: "product-form" do |form| %>
   <% if form.object.errors.any? %>
     <p class="error"><%= form.object.errors.full_messages.first %></p>
   <% end %>
 
-  <div>
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "e.g., Classic Cotton T-Shirt" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+<div class="form-actions">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to "Cancel", products_path, class: "btn btn-secondary" %>
   </div>
+
 <% end %>

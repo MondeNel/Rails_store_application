@@ -1,11 +1,10 @@
-<h1>Products</h1>
+<div class="page-header">
+  <h1>Products</h1>
+  <%= link_to "New product", new_product_path, class: "btn btn-primary" %>
+</div>
 
-<%= link_to "New product", new_product_path %>
-
-<div id="products">
+<div id="products" class="product-list">
   <% @products.each do |product| %>
-    <div>
-      <%= link_to product.name, product_path(product.id) %>
-    </div>
+    <%= link_to product.name, product, class: "product-card" %>
   <% end %>
 </div>
